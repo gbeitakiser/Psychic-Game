@@ -6,3 +6,4 @@ Open index.html inside of the Psychic-Game folder using a browser. Then follow t
 
 If you guess right before all guesses are exhausted, an alert comes up telling you that you won and then cues a function that resets all variables and allows you to start the game again. 
 
+If you lose the game four times in a row with zero wins, an alert pops up telling you that you suck at guessing and should probably open the console to see the correct letter console logged.
