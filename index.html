@@ -13,6 +13,7 @@
     
 <!-- Getting HTML ready for manipulatable vars -->
 
+    <p id="welcome"></p>
     <p id="wins"></p>
     <p id="losses"></p>
     <p id="guessesLeft"></p>
@@ -26,20 +27,22 @@
     var wins = 0;
     var losses = 0;
     var guessesLeft = 9;
-    var playerGuess = "";
-    var compGuess = "";
+    var playerGuesses = [];
+    var compGuess = "r";
     
     // Vars to help me manipulate HTML
 
+    var printWelcome = document.getElementById("welcome");
     var printWins = document.getElementById("wins");
     var printLosses = document.getElementById("losses");
     var printGuesseleft = document.getElementById("guessesLeft");
-    // var printYourGuess = document.getElementById("yourGuesses");
+    var printPlayerGuess = document.getElementById("yourGuesses");
+
+    printWelcome.textContent = "Welcome To The Psychic Game! Press Any Key To Begin";
 
     var guesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
     "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-   
 
     // Functions
 
@@ -47,11 +50,39 @@
         var generateLetter = guesses[Math.floor(Math.random() * (guesses.length - 1))];
         compGuess = generateLetter;
     }
-    // guessLetter();   <-----Need to call this variable at another time, but here it is, ready and waiting
 
-     console.log(compGuess);
+    guessLetter();   
+    console.log(compGuess);
 
+
+    document.onkeyup = function(event) {
+        var playerPress = event.key;
+
+
+        playerGuesses.push(playerPress);
+
+
+
+        if (guessesLeft > 0) {
+            if (playerPress === compGuess) {
+                alert("You Guessed Right!");
+            wins++;
+            playerGuesses = [];
+            // guessLetter();
+            }
+
+            else if () {
+            }
+        }
+        console.log(guessesLeft);
+        printWelcome.textContent = "";
+        printWins.textContent = "Wins: " + wins;
+        printLosses.textContent = "Losses: " + losses;
+        printGuesseleft.textContent = "Guesses Left: " + guessesLeft;
+        printPlayerGuess.textContent = "You've Guessed: " + playerGuesses;
+        // Add in winning and loosing varibles later
     
+    };
 
 
   
