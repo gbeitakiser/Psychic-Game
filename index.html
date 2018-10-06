@@ -3,11 +3,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Psychic Game</title>
 </head>
 <body>
+<!-- HTML -->
+    <h1>Psychic Game</h1>
+    <h3>Guess what letter I'm thinking of?</h3>
 
-    <script>
+    
+<!-- Getting HTML ready for manipulatable vars -->
+
+    <p id="wins"></p>
+    <p id="losses"></p>
+    <p id="guessesLeft"></p>
+    <p id="yourGuesses"></p>
+
+
+    <script type="text/javascript">
+
+    // Setting up all my global variables
+
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 9;
+    var playerGuess = "";
+    var compGuess = "";
+    
+    // Vars to help me manipulate HTML
+
+    var printWins = document.getElementById("wins");
+    var printLosses = document.getElementById("losses");
+    var printGuesseleft = document.getElementById("guessesLeft");
+    // var printYourGuess = document.getElementById("yourGuesses");
+
+    var guesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
+    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+   
+
+    // Functions
+
+    function guessLetter() {
+        var generateLetter = guesses[Math.floor(Math.random() * (guesses.length - 1))];
+        compGuess = generateLetter;
+    }
+    // guessLetter();   <-----Need to call this variable at another time, but here it is, ready and waiting
+
+     console.log(compGuess);
+
+    
+
+
+  
+
         
     
     </script>
