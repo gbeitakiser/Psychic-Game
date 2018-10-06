@@ -73,17 +73,21 @@
                 alert("You Guessed Right!");
             wins++;
             gameOver();
+            checkLoser();
             }
 
             else {
                 guessesLeft -= 1;
+                checkLoser();
             }
         }
 
-        else if (guessesLeft === 0) {
+        function checkLoser() {
+        if (guessesLeft === 0 ) {
             alert("Game Over. You Lose!")
             losses += 1;
             gameOver();
+        }
         }
 
 
